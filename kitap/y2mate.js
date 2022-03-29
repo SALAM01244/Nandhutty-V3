@@ -53,7 +53,7 @@ async function yt(url, quality, type, bitrate, server = 'en68') {
   let id = /var k__id = "(.*?)"/.exec(document.body.innerHTML) || ['', '']
   let thumb = document.querySelector('img').src
   let title = document.querySelector('b').innerHTML
-  let res2 = await post(`https://www.y2mate.com/mates/${server}/convert`, {
+  let res2 = await post(`https://m.freemake.com/tr/free_video_downloader/${server}/convert`, {
     type: 'youtube',
     _id: id[1],
     v_id: ytId[1],
@@ -77,13 +77,13 @@ module.exports = {
   yt,
   ytIdRegex,
   /**
-   * Download YouTube Video as Audio via y2mate
+   * Download YouTube Video as Audio via freemate
    * @param {String} url YouTube Video URL
    * @param {String} server (avaiable: `id4`, `en60`, `en61`, `en68`)
    */
   yta(url, server = 'en68') { return yt(url, '128kbps', 'mp3', '128', server) },
   /**
-   * Download YouTube Video as Video via y2mate
+   * Download YouTube Video as Video via freemake
    * @param {String} url YouTube Video URL
    * @param {String} server (avaiable: `id4`, `en60`, `en61`, `en68`)
    */
